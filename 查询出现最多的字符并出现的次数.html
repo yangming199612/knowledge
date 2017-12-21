@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>查询出现最多的字符串并出现的次数</title>
+</head>
+<body>
+	<script>
+		var str = "abcdaaaapghsjsc";
+		var newarr = str.split("");
+		var max=0,val="";
+		function fn(arr,a){
+			var count = 0;
+			for(var i = 0; i < arr.length; i++){
+				if(arr[i] == a){
+					count++;
+				}
+			}
+			return count;
+		}
+		for(var i = 0; i < newarr.length; i++){
+			var ind = fn(newarr, newarr[i]);
+			if(ind > max){
+				max = ind;
+				val = newarr[i];
+			}
+		}
+		console.log("出现最多的字符是" + val +"出现的次数是" + max)
+	</script>
+</body>
+</html>
